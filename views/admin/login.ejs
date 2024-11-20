@@ -7,38 +7,40 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-
-
-<!-- Navigation Bar -->
- <div class="container">
-    <header>
-        <div class="logo">
+    <!-- Navigation Bar -->
+    <div class="container">
+        <header>
+          <div class="logo">
             <a href="/">food</a> <!-- Link to homepage -->
         </div>
-<nav>
-    <ul>
-        <li><a href="/distributionCenters">Distribution Centers</a></li>
-        <li><a href="/beneficiaries">Beneficiaries</a></li>
-        <li><a href="/donors">Donors</a></li>
-        <li><a href="/deliveryRecords">Delivery Records</a></li>
-        <li><a href="/admin/login">login</a></li>
-        <li><a href="/admin/registration">registration</a></li>
-    </ul>
-</nav>
-</header>
+            <nav>
+                <ul>
+                    <li><a href="/distributionCenters">Distribution Centers</a></li>
+                    <li><a href="/beneficiaries">Beneficiaries</a></li>
+                    <li><a href="/donors">Donors</a></li>
+                    <li><a href="/deliveryRecords">Delivery Records</a></li>
+                    <li><a href="/admin/login">Login</a></li>
+                    <li><a href="/admin/registration">Registration</a></li>
+                </ul>
+            </nav>
+        </header>
 
-  <h1>Admin Login</h1>
-  <% if (error) { %>
-    <p style="color: red;"><%= error %></p>
-  <% } %>
-  <form action="/admin/login" method="POST">
-    <label for="email">Email:</label>
-    <input type="email" name="email" id="email" required>
-    <br>
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required>
-    <br>
-    <button type="submit">Login</button>
-  </form>
+        <!-- Login Form Section -->
+        <div class="card">
+            <h1>Admin Login</h1>
+            <% if (error) { %>
+                <p style="color: red;"><%= error %></p>
+            <% } %>
+            <form action="/admin/login" method="POST" class="login-form">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required class="input-field">
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required class="input-field">
+                <br>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

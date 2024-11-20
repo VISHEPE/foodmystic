@@ -48,6 +48,13 @@ nav ul li a {
     color: rgb(33, 56, 38);
     font-weight: bold;
 }
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
 
 main {
     display: flex;
