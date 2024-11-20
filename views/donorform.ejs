@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Food Fairy</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+
+<!-- Navigation Bar -->
+ <div class="container">
+    <header>
+        <div class="logo">
+            <a href="/">food</a> <!-- Link to homepage -->
+        </div>
+<nav>
+    <ul>
+        <li><a href="/distributionCenters">Distribution Centers</a></li>
+        <li><a href="/beneficiaries">Beneficiaries</a></li>
+        <li><a href="/donors">Donors</a></li>
+       
+        <li><a href="/admin/login">login</a></li>
+        <li><a href="/admin/registration">registration</a></li>
+    </ul>
+</nav>
+</header>
+<h1>Donors</h1>
+
+<div class="card">
+    <h2>Add New Donor</h2>
+    <form action="/donors" method="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" name="contact" required>
+        </div>
+        <div>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+        </div>
+        <button type="submit">Add Donor</button>
+    </form>
+</div>

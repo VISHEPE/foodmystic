@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Food Fairy</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+
+<!-- Navigation Bar -->
+ <div class="container">
+    <header>
+        <div class="logo">food</div>
+<nav>
+    <ul>
+        <li><a href="/distributionCenters">Distribution Centers</a></li>
+        <li><a href="/beneficiaries">Beneficiaries</a></li>
+        <li><a href="/donors">Donors</a></li>
+       
+        <li><a href="/admin/login">login</a></li>
+        <li><a href="/admin/registration">donate</a></li>
+    </ul>
+</nav>
+</header>
+
+<h1>Beneficiaries</h1>
+
+<div class="card">
+
+    <h2>Add New Beneficiary</h2>
+    <% if (messages.error) { %>
+        <div class="alert alert-danger">
+          <%= messages.error %>
+        </div>
+      <% } %>
+      <% if (messages.success) { %>
+        <div class="alert alert-success">
+          <%= messages.success %>
+        </div>
+      <% } %>
+      
+
+    <form action="/beneficiaries" method="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" name="contact" required>
+        </div>
+        <div>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+        </div>
+        <button type="submit">Add Beneficiary</button>
+    </form>
+</div>
+</body>
+</html>

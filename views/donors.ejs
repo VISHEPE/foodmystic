@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Food Fairy</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="/">food</a> <!-- Link to homepage -->
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="/distributionCenters">Distribution Centers</a></li>
+                    <li><a href="/beneficiaries">Beneficiaries</a></li>
+                    <li><a href="/donors">Donors</a></li>
+                    <li><a href="/admin/login">Login</a></li>
+                    <li><a href="/admin/registration">Registration</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Card Section -->
+        <div class="card">
+            <h2>Existing Donors</h2>
+            <% if (donors && donors.length > 0) { %>
+                <table class="center-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Contact</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% donors.forEach(donor => { %>
+                            <tr>
+                                <td><%= donor.name %></td>
+                                <td><%= donor.contact %></td>
+                                <td><%= donor.Email %></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <p>No donors found.</p>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

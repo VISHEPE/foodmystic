@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Food Fairy</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+
+<!-- Navigation Bar -->
+ <div class="container">
+    <header>
+        <div class="logo">
+            <a href="/">food</a> <!-- Link to homepage -->
+        </div>
+<nav>
+    <ul>
+        <li><a href="/distributionCenters">Distribution Centers</a></li>
+        <li><a href="/beneficiaries">Beneficiaries</a></li>
+        <li><a href="/donors">Donors</a></li>
+       
+        <li><a href="/admin/login">login</a></li>
+        <li><a href="/admin/registration">donate</a></li>
+    </ul>
+</nav>
+</header>
+
+<div class="card">
+    <h2>Existing Centers</h2>
+    <% if (centers && centers.length > 0) { %>
+        <table class="center-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Address</th>
+                   
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% centers.forEach(center => { %>
+                    <tr>
+                        <td><%= center.name %></td>
+                        <td><%= center.contact %></td>
+                        <td><%= center.address %></td>
+                        
+                        <td>
+                            <% if (center.image) { %>
+                                <img src="<%= center.image %>" alt="<%= center.name %>" width="100" height="100">
+                            <% } else { %>
+                                No Image
+                            <% } %>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No distribution centers found.</p>
+    <% } %>
+</div>
+</body>
+</html>

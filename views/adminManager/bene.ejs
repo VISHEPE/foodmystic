@@ -1,0 +1,47 @@
+<!-- views/adminManager/bene.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beneficiaries</title>
+    <link rel="stylesheet" href="/path/to/your/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Beneficiaries</h2>
+
+        <% if (beneficiaries && beneficiaries.length > 0) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% beneficiaries.forEach(beneficiary => { %>
+                        <tr>
+                            <td><%= beneficiary.name %></td>
+                            <td><%= beneficiary.contact %></td>
+                            <td><%= beneficiary.address %></td>
+                            <td>
+                                <% if (beneficiary.image) { %>
+                                    <img src="<%= beneficiary.image %>" alt="<%= beneficiary.name %>" width="100" height="100">
+                                <% } else { %>
+                                    No Image
+                                <% } %>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p>No beneficiaries found.</p>
+        <% } %>
+    </div>
+</body>
+</html>

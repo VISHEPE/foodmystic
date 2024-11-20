@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Food Fairy</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+
+<!-- Navigation Bar -->
+ <div class="container">
+    <header>
+      <div class="logo">
+        <a href="/">food</a> <!-- Link to homepage -->
+    </div>
+<nav>
+    <ul>
+        <li><a href="/distributionCenters">Distribution Centers</a></li>
+        <li><a href="/beneficiaries">Beneficiaries</a></li>
+        <li><a href="/donors">Donors</a></li>
+        
+        <li><a href="/admin/login">login</a></li>
+        <li><a href="/admin/registration">Donate</a></li>
+    </ul>
+</nav>
+</header>
+
+<h2>Delivery Records</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Donor</th>
+      <th>Beneficiary</th>
+      <th>Distribution Center</th>
+      <th>Food Type</th>
+      <th>Quantity</th>
+      <th>Delivery Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% deliveryRecords.forEach(record => { %>
+      <tr>
+        <td><%= record.id %></td>
+        <td><%= record.donor_id %></td>
+        <td><%= record.beneficiary_id %></td>
+        <td><%= record.distribution_center_id %></td>
+        <td><%= record.food_type_id %></td>
+        <td><%= record.quantity %></td>
+        <td><%= record.delivery_date %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<form action="/delivery-records" method="POST">
+  <label for="donor_id">Donor ID:</label>
+  <input type="number" name="donor_id" required>
+
+  <label for="beneficiary_id">Beneficiary ID:</label>
+  <input type="number" name="beneficiary_id" required>
+
+  <label for="distribution_center_id">Distribution Center ID:</label>
+  <input type="number" name="distribution_center_id" required>
+
+  <label for="food_type_id">Food Type ID:</label>
+  <input type="number" name="food_type_id" required>
+
+  <label for="quantity">Quantity:</label>
+  <input type="number" name="quantity" required>
+
+  <label for="delivery_date">Delivery Date:</label>
+  <input type="date" name="delivery_date" required>
+
+  <button type="submit">Add Delivery Record</button>
+</form>
+
+

@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Food Fairy</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+
+<!-- Navigation Bar -->
+ <div class="container">
+    <header>
+        <div class="logo">
+            <a href="/">food</a> <!-- Link to homepage -->
+        </div>
+<nav>
+    <ul>
+        <li><a href="/distributionCenters">Distribution Centers</a></li>
+        <li><a href="/beneficiaries">Beneficiaries</a></li>
+        <li><a href="/donors">Donors</a></li>
+       
+        <li><a href="/admin/login">login</a></li>
+        <li><a href="/admin/registration">donate</a></li>
+    </ul>
+</nav>
+</header>
+
+<div class="card">
+    <h2>Existing Beneficiaries</h2>
+    <% if (beneficiaries && beneficiaries.length > 0) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% beneficiaries.forEach(beneficiary => { %>
+                    <tr>
+                        <td><%= beneficiary.name %></td>
+                        <td><%= beneficiary.contact %></td>
+                        <td><%= beneficiary.address %></td>
+                        <td>
+                            <a href="/beneficiaries/<%= beneficiary.id %>/edit" class="btn btn-edit">Edit</a>
+                            <form action="/beneficiaries/<%= beneficiary.id %>/delete" method="POST" style="display:inline;">
+                                <button type="submit" class="btn btn-delete" onclick="return confirm('Are you sure you want to delete this beneficiary?')">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No beneficiaries found.</p>
+    <% } %>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.querySelector('form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const response = await fetch('/beneficiaries', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(Object.fromEntries(formData)),
+            });
+            const result = await response.json();
+            if (result.success) {
+                alert('Beneficiary added successfully!');
+                location.reload();
+            } else {
+                alert('Error adding beneficiary: ' + result.message);
+            }
+        });
+    });
+</script>
+</body>
+</html>
+
