@@ -30,12 +30,22 @@ router.get('/registration', (req, res) => {
     res.render('registration'); 
   });
   
-  // Route to show the donor form in the admin
+  // route to show the donor form in the admin
 router.get('/donorform', (req, res) => {
   res.render('admin/donorform', { title: 'Add Donor' });
 });
 
-  // Route to display distribution centers 
+  // route to show the distribution form  in the admin
+  router.get('/distroForm', (req, res) => {
+    res.render('admin/distroForm', { title: 'distribution' });
+  });
+  
+   //route to show the distribution form  in the admin
+   router.get('/beneform', (req, res) => {
+    res.render('admin/beneform', { title: 'distribution' });
+  });
+  
+  // route to display distribution centers 
   router.get('/adminManager/distroview', async (req, res) => {
     try {
         const [centers] = await db.query('SELECT * FROM distribution_centers'); 

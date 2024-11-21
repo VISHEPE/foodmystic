@@ -37,7 +37,7 @@
                     <th>Name</th>
                     <th>Contact</th>
                     <th>Address</th>
-                    <th>Actions</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -47,11 +47,7 @@
                         <td><%= beneficiary.contact %></td>
                         <td><%= beneficiary.address %></td>
                         <td>
-                            <a href="/beneficiaries/<%= beneficiary.id %>/edit" class="btn btn-edit">Edit</a>
-                            <form action="/beneficiaries/<%= beneficiary.id %>/delete" method="POST" style="display:inline;">
-                                <button type="submit" class="btn btn-delete" onclick="return confirm('Are you sure you want to delete this beneficiary?')">Delete</button>
-                            </form>
-                        </td>
+                        
                     </tr>
                 <% }); %>
             </tbody>
