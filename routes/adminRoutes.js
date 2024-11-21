@@ -29,6 +29,11 @@ async function createDonor(name, contact, email, image) {
 router.get('/registration', (req, res) => {
     res.render('registration'); 
   });
+  
+  // Route to show the donor form in the admin
+router.get('/donorform', (req, res) => {
+  res.render('admin/donorform', { title: 'Add Donor' });
+});
 
   // Route to display distribution centers 
   router.get('/adminManager/distroview', async (req, res) => {
