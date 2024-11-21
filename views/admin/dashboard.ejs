@@ -7,48 +7,41 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-
-
-<!-- Navigation Bar -->
- <div class="container">
+<div class="container">
+    <!-- Header -->
     <header>
         <div class="logo">
-            <a href="/">food</a> <!-- Link to homepage -->
+            <a href="/">food</a> 
         </div>
-<nav>
-    <ul>
-        <li><a href="/distributionCenters">Distribution Centers</a></li>
-        <li><a href="/beneficiaries">Beneficiaries</a></li>
-        <li><a href="/donors">Donors</a></li>
+        <nav>
+            <ul>
+                <li><a href="/distributionCenters">Distribution Centers</a></li>
+                <li><a href="/beneficiaries">Beneficiaries</a></li>
+                <li><a href="/donors">Donors</a></li>
+                <li><a href="/admin/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="description">
+            <h1>Welcome to the Admin Dashboard</h1>
+            <p>Manage delivery records and donor registrations here.</p>
+            <div class="card">
+                <h2>Quick Links</h2>
+                <a href="./adminManager/distroview" class="btn">Distribution Centers</a>
+                <a href="/beneficiaries" class="btn">Beneficiaries</a>
+                <a href="/donors" class="btn">Donors</a>
+                <a href="/deliveryRecords" class="btn">Delivery Records</a>
+                <a href="/distributionCenters" class="btn">Add Distribution Center</a>
+                <a href="./beneform" class="btn">Add Beneficiaries</a>
+                <a href="/donors" class="btn">Add Donors</a>
+            </div>
+        </div>
+
        
-        <li> <a href="/admin/logout">Logout</a></li>
-    </ul>
-</nav>
-
-
-</header>
-
-  <h1>Welcome to the Admin Dashboard</h1>
-  <p>Manage delivery records and donor registrations here.</p>
-
-  <a href="./adminManager/distroview">Distribution Centers</a>
-  <a href="/beneficiaries">Beneficiaries</a>
-  <a href="/donors">Donors</a>
-
- <a href="/deliveryRecords">Delivery Records</a><br>.
-
-
-
-    
-    <a href="/distributionCenters">add donors</a>
-    <a href="./beneform">add Beneficiaries</a>
-    <a href="/donors">add Donors</a>
-    <a href="/deliveryRecords">Delivery Records</a>
-       
-   
-
-  
- 
-  
+    </main>
+</div>
 </body>
 </html>

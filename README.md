@@ -23,8 +23,9 @@ The Food Fairy is a Food Distribution Management System designed to streamline f
 - **Database**: MySQL
 - **Authentication**: bcryptjs for password hashing, express-session for session management
 - **Other Libraries**: express-validator for input validation, connect-flash for flash messages
-the admin passcode is 12345678@
-and email admin@example.com
+
+##the admin passcode is 12345678@
+##and email admin@example.com
 
 ## Prerequisites
 Before you begin, ensure you have the following installed:
