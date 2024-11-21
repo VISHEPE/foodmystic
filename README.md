@@ -24,9 +24,9 @@ The Food Fairy is a Food Distribution Management System designed to streamline f
 - **Authentication**: bcryptjs for password hashing, express-session for session management
 - **Other Libraries**: express-validator for input validation, connect-flash for flash messages
 
-##the admin passcode is 12345678@
-##and email admin@example.com
-I victor emmanuel odhiambo added the admin using postman.
+## the admin passcode is 12345678@
+## and email admin@example.com
+- **I victor emmanuel odhiambo added the admin using postman.**
 ## Prerequisites
 Before you begin, ensure you have the following installed:
 - [Node.js](https://nodejs.org/en/download/) (LTS version recommended)
